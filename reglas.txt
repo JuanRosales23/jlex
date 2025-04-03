@@ -1,0 +1,54 @@
+import java.lang.*;
+
+%%
+%%
+
+[0-9]+ {
+	System.out.println("Entero: " + yytext());
+}
+String {
+	System.out.println("Declaración cadena: " + yytext());
+}
+"+" {
+	System.out.println("Suma: " + yytext());
+}
+"-" {
+	System.out.println("Resta: " + yytext());
+}
+"*" {
+	System.out.println("Multiplicación: " + yytext());
+}
+"/" {
+	System.out.println("Division: " + yytext());
+}
+int {
+
+	System.out.println("Declaración de entero: " + yytext());
+}
+\( {
+	System.out.println("Paréntesis abierto: " + yytext());
+}
+\) {
+	System.out.println("Paréntesis cerrado: " + yytext());
+}
+"=" {
+	System.out.println("Asignación: " + yytext());
+}
+\".*\" {
+	System.out.println("Cadena: " + yytext());
+}
+[A-Z][a-z]+([a-z][0-9])"*" {
+	System.out.println("variable: "+ yytext());
+}
+";" {
+	System.out.println("Punto y coma: " + yytext());	
+}
+
+[ \n\r\t] {
+	
+}
+
+. {
+	System.out.println("Error léxico");
+}
+
